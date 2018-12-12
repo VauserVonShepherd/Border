@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
-    public float mouseScroll = 0;
-
     public float GetMouseScroll()
     {
         return -Input.GetAxis("Mouse ScrollWheel");

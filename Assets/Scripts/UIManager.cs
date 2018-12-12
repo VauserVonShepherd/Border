@@ -5,4 +5,5 @@ using TMPro;
 
 public class UIManager : MonoBehaviour {
     public TextMeshProUGUI txt_Time;
+    public TextMeshProUGUI txt_Money;
 }

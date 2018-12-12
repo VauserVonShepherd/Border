@@ -4,8 +4,6 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterInfo", menuName = "Character", order = 1)]
 public class CharacterScriptableObject : ScriptableObject {
-
-
     [SerializeField]
     private Sprite head;
     [SerializeField]
