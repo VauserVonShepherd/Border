@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class TimeSystem : MonoBehaviour {
+    public static float timeSpeed = 1;
+
     [SerializeField]
     private float MorningTime = 8, NightTime = 20;
     private float currentTime;
-    [SerializeField]
-    private float timeSpeed = 5;
+
     [SerializeField]
     private int speedMode = 0;
 

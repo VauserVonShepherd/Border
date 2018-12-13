@@ -15,4 +15,6 @@ MonoBehaviour:
   body: {fileID: 21300012, guid: 3cadd8c00f3ff7741be79329307985b9, type: 3}
   Equipment: {fileID: 21300004, guid: 3cadd8c00f3ff7741be79329307985b9, type: 3}
   range: 10
-  health: 0
+  health: 1
+  morale: 1
+  speed: 3
