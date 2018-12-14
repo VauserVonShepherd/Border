@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerCameraControl : MonoBehaviour {
     public Camera playerCamera;
-
     public PlayerInput inputManager;
 
     [SerializeField]

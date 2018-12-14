@@ -61,16 +61,12 @@ public class PlayerInput : MonoBehaviour {
         return false;
     }
 
-    //public bool GetMoveInput()
-    //{
-    //    if (Input.GetMouseButtonDown(1))
-    //    {
-    //        return true;
-    //    }
-    //    else if (Input.touchCount == 1)
-    //    {
-    //        return true;
-    //    }
-    //    return false;
-    //}
+    public bool GetMovementInput()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            return true;
+        }
+        return false;
+    }
 }

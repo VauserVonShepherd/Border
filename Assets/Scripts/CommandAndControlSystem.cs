@@ -9,11 +9,14 @@ public class CommandAndControlSystem : MonoBehaviour {
     [SerializeField]
     private Camera mainCamera;
 
+    [SerializeField]
+    private UIManager uiManager;
+
     private Selectable currentSelected;
     
     private void Update()
     {
-        if(!playerInput.GetSelectionInput())
+        if(!playerInput.GetSelectionInput() && !playerInput.GetMovementInput())
         {
             return;
         }
@@ -25,19 +28,30 @@ public class CommandAndControlSystem : MonoBehaviour {
 
         if (playerInput.GetSelectionInput())
         {
+            if (hit && hit.collider && hit.collider.GetComponent<Selectable>())
+            {
+                SelectSelectable(hit.collider.GetComponent<Selectable>());
+            }
+        }//left click
+        else if (playerInput.GetMovementInput())
+        {
             if (currentSelected)
             {
+                print("move");
+                //move
                 if (currentSelected.GetComponent<SquadUnit>())
                 {
-                    currentSelected.GetComponent<SquadUnit>().MoveSquad(ray.origin);
+                    Vector3 pos = new Vector3(ray.origin.x, ray.origin.y, 0);
+                    currentSelected.GetComponent<SquadUnit>().MoveSquad(pos);
                 }
                 return;
             }
+        }//end right click
+    }  
 
-            if (hit && hit.collider && hit.collider.GetComponent<Selectable>())
-            {
-                currentSelected = hit.collider.GetComponent<Selectable>().Select();
-            }
-        }
+    private void SelectSelectable(Selectable selectable)
+    {
+        uiManager.ToggleSelectedDetail(selectable);
+        currentSelected = selectable.Select();
     }
 }

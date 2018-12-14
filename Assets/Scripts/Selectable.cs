@@ -8,4 +8,9 @@ public class Selectable : MonoBehaviour {
     {
         return null;
     }
+
+    public virtual Selectable Deselect()
+    {
+        return null;
+    }
 }

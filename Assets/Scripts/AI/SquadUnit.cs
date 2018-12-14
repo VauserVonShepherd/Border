@@ -40,7 +40,7 @@ public class SquadUnit : Selectable {
     {
         for (int i = 0; i < characterList.Count; i++)
         {
-            Vector3 pos = StaticFunctions.SpawnInCircle(targetPos, 0.1f, squadMaxSize, i);
+            Vector3 pos = StaticFunctions.SpawnInCircle(targetPos, 0.03f, squadMaxSize, i);
 
             characterList[i].m_Movement.target = pos;
         }
